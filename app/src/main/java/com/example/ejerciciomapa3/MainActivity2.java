@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity2 extends AppCompatActivity {
     WebView wv;
@@ -15,6 +16,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         wv= (WebView) findViewById(R.id.webView);
         String nombre = getIntent().getStringExtra("nombre");
+        wv.setWebViewClient(new WebViewClient());
         wv.loadUrl("https://en.wikipedia.org/wiki/"+nombre);
     }
 }
